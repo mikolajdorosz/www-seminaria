@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Zdarzenie SCROLL & RESIZE</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="progress-bar" id="progressBar"></div>
+
+        <header class="nav-container" id="navContainer">
+            <nav class="nav">
+                <h1 class="nav-logo" id="navLogo">Seminarium 3</h1>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#section-1">Sekcja1</a></li>
+                    <li><a href="#section-2">Sekcja2</a></li>
+                    <li><a href="#section-3">Sekcja3</a></li>
+                </ul>
+                <button class="nav-hamburger" id="navHamburger">☰</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Demonstracja zdarzeń "scroll" i "resize"</h2>
+            </section>
+
+            <section class="section from-left" id="section-1">
+                <h2>Sekcja 1</h2>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Maiores, nihil incidunt mollitia placeat ut officiis dolore
+                    modi cumque, perspiciatis tenetur sed accusantium
+                    consectetur earum optio nisi doloribus tempore dolores
+                    voluptas! Inventore omnis accusamus aspernatur hic aliquam
+                    distinctio exercitationem error est ea quidem repudiandae
+                    facere voluptatum aperiam earum eligendi, ipsam soluta
+                    quaerat placeat sunt id quae dolore molestias. Dicta, eum
+                    illo.
+                </p>
+            </section>
+
+            <section class="section from-right" id="section-2">
+                <h2>Sekcja 2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quis, fuga illum! Accusamus similique obcaecati eligendi
+                    odit cupiditate, repellendus, animi hic eveniet dolores
+                    pariatur nemo, consequatur vero suscipit facere rem
+                    blanditiis. Voluptas nobis recusandae asperiores consequatur
+                    labore quidem dolorem! Exercitationem nobis totam corporis
+                    saepe beatae alias nihil reprehenderit nesciunt. Dicta,
+                    reiciendis similique porro iusto corrupti tempore quam.
+                    Ipsam molestias ex delectus!
+                </p>
+            </section>
+
+            <section class="section from-bottom" id="section-3">
+                <h2>Sekcja 3</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quaerat corporis praesentium earum maxime, voluptatibus eius
+                    quibusdam, ratione unde distinctio labore nulla tempore
+                    delectus, error commodi suscipit perferendis ipsam dolorem
+                    eum? Quos rem sequi dolor est eligendi pariatur, quasi ipsa
+                    perferendis labore magni dolorem. Eius ab suscipit quisquam
+                    corporis dolores aliquid esse in vitae illum! Quisquam
+                    mollitia autem ea corrupti excepturi.
+                </p>
+            </section>
+        </main>
+
+        <button class="btn scrollto-btn" id="scrollToBtn">scrollTo</button>
+        <button class="btn scrollby-btn" id="scrollByBtn">scrollBy</button>
+    </body>
+</html>
