@@ -195,13 +195,13 @@ body {
     overflow-x: scroll;
 }
 .section:nth-child(2) p {
-    width: 200vw;
+    width: 150vw;
 }
 
 .section:nth-child(3) {
-    height: 100vh;
+    height: 150vh;
     overflow-y: scroll;
 }
 .section:nth-child(3) p {
-    height: 200vh;
+    height: 150vh;
 }
