@@ -16,7 +16,6 @@ body {
     line-height: 1.6;
     background: #fafafa;
     color: #111;
-    /* overflow-x: hidden; */
 }
 
 .progress-bar {
@@ -148,7 +147,6 @@ body {
 .section p {
     column-count: 3;
     column-gap: 50px;
-    color: #444;
     font-size: 17px;
 }
 
@@ -191,4 +189,19 @@ body {
 .scrollby-btn {
     bottom: 80px;
     right: 30px;
+}
+
+.section:nth-child(2) {
+    overflow-x: scroll;
+}
+.section:nth-child(2) p {
+    width: 200vw;
+}
+
+.section:nth-child(3) {
+    height: 100vh;
+    overflow-y: scroll;
+}
+.section:nth-child(3) p {
+    height: 200vh;
 }

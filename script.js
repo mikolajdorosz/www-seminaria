@@ -8,7 +8,7 @@ const heroTitle = document.querySelector(".hero h2");
 const scrollToBtn = document.querySelector("#scrollToBtn");
 const scrollByBtn = document.querySelector("#scrollByBtn");
 
-// SCROLL
+// SCROLL on window
 
 window.addEventListener("scroll", () => {
     console.log(
@@ -54,6 +54,18 @@ const sectionsHandler = () => {
             section.classList.add("visible");
     });
 };
+
+// SCROLL on element
+
+sections[0].addEventListener("scroll", (e) => {
+    scrollElementX = e.currentTarget.scrollLeft;
+    e.currentTarget.style.color = `rgb(${scrollElementX}, ${255 - scrollElementX}, ${scrollElementX})`;
+});
+
+sections[1].addEventListener("scroll", (e) => {
+    scrollElementY = e.currentTarget.scrollTop;
+    e.currentTarget.style.color = `rgb(${scrollElementY}, ${scrollElementY}, ${255 - scrollElementY})`;
+});
 
 // RESIZE
 
