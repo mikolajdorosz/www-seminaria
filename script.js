@@ -10,7 +10,7 @@ const scrollByBtn = document.querySelector("#scrollByBtn");
 
 // SCROLL on window
 
-window.addEventListener("scroll", () => {
+const scrollHandler = () => {
     console.log(
         "Przewijam!",
         "scrollY (pageYOffset):",
@@ -23,7 +23,8 @@ window.addEventListener("scroll", () => {
     navbarHandler();
     heroHandler();
     sectionsHandler();
-});
+};
+window.addEventListener("scroll", scrollHandler);
 
 const progressHandler = () => {
     const scrollTop = window.scrollY;
@@ -44,7 +45,6 @@ const heroHandler = () => {
     const scrollFraction = Math.min(window.scrollY / window.innerHeight, 1);
     const newFont = initialFont - scrollFraction * decrease;
     heroTitle.style.fontSize = `${Math.max(newFont, minFont)}px`;
-    heroTitle.style.color = `rgb(${255 - scrollY}, ${scrollY}, ${scrollY})`;
 };
 
 const sectionsHandler = () => {
@@ -57,19 +57,23 @@ const sectionsHandler = () => {
 
 // SCROLL on element
 
-sections[0].addEventListener("scroll", (e) => {
+const horizontalHandler = (e) => {
     scrollElementX = e.currentTarget.scrollLeft;
+    console.log("Przewijam!", "scrollLeft:", scrollElementX);
     e.currentTarget.style.color = `rgb(${scrollElementX}, ${255 - scrollElementX}, ${scrollElementX})`;
-});
+};
+sections[0].addEventListener("scroll", horizontalHandler);
 
-sections[1].addEventListener("scroll", (e) => {
+const verticalHandler = (e) => {
     scrollElementY = e.currentTarget.scrollTop;
+    console.log("Przewijam!", "scrollTop:", scrollElementY);
     e.currentTarget.style.color = `rgb(${scrollElementY}, ${scrollElementY}, ${255 - scrollElementY})`;
-});
+};
+sections[1].addEventListener("scroll", verticalHandler);
 
 // RESIZE
 
-window.addEventListener("resize", () => {
+const resizeHandler = () => {
     console.log(
         "Zmieniam rozmiar!",
         "innerHeight:",
@@ -82,10 +86,11 @@ window.addEventListener("resize", () => {
         outerWidth,
     );
 
-    resizeHandler();
-});
+    mobileHandler();
+};
+window.addEventListener("resize", resizeHandler);
 
-const resizeHandler = () => {
+const mobileHandler = () => {
     if (window.innerWidth <= 768) {
         navHamburger.style.display = "block";
         navMenu.classList.add("mobile");
@@ -102,6 +107,8 @@ const resizeHandler = () => {
         });
     }
 };
+
+// SCROLL functions
 
 scrollToBtn.addEventListener("click", () => {
     // window.scroll(0, 0);
@@ -122,4 +129,9 @@ navLinks.forEach((link) => {
         navMenu.classList.remove("active");
         navHamburger.textContent = "☰";
     });
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    resizeHandler();
+    scrollHandler();
 });
